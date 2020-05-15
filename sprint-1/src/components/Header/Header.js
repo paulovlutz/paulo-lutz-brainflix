@@ -1,28 +1,29 @@
 import React from "react";
 import logo from "../../assets/logo/Logo-brainflix.svg";
+import "./header.scss";
 
 // console.log(logo);
 
 const Header = () => (
-    <section className="header">
+    <header className="header">
         <Brand/>
         <Search/>
-        <HeaderButton/>
-    </section>
+        <UploadButton/>
+    </header>
 );
 
-const Brand = props => (
-    <img src={logo} alt="Logo" />
+const Brand = () => (
+    <img src={logo} alt="Logo" className="header__logo" />
 );
 
-const Search = props => (
+const Search = () => (
     <form>
-        <input type="search" value="Search"></input>
+        <input type="search" placeholder="Search" className="header__search"></input>
     </form>
 );
 
-const HeaderButton = props => (
-    <button>+ UPLOAD</button>
+const UploadButton = () => (
+    <button className="header__button button">+ UPLOAD</button>
 )
 
 export default Header;
