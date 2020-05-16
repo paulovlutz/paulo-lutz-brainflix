@@ -1,0 +1,13 @@
+@mixin button {
+    background-color: $brainflix-blue;
+    border: none;
+    border-radius: 3px;
+    color: $white;
+    height: 100%;
+    cursor: pointer;
+    transition: 1s;
+
+    &:hover {
+        background-color: $brainflix-dark-blue;
+    }
+}
