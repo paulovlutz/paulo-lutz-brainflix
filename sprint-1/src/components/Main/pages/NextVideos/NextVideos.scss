@@ -1,0 +1,11 @@
+@import "../../../../styles/partials/mixins";
+@import "../../../../styles/partials/variables";
+
+.nextVideos {
+    margin: 20px 16px;
+
+    &__title {
+        color: $silver;
+        margin-bottom: 40px;
+    }
+}

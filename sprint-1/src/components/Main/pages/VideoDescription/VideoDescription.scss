@@ -1,0 +1,191 @@
+@import "../../../../styles/partials/mixins";
+@import "../../../../styles/partials/variables";
+
+.videoDescription {
+    margin: 20px 16px;
+
+    &__title 
+    
+        h1 {
+            @include heading-1;  
+            margin-bottom: 0;
+        }
+
+        h3 {
+            @include heading-3;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+
+    &__channel {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+
+        &-date {
+            color: $silver;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        margin-bottom: 30px;
+
+        span {
+            margin-right: 10px;
+            margin-left: 10px;
+            @include paragraph;
+        }
+    }
+
+    &__divider {
+        border: 0.5px solid $mercury;
+    }
+
+    &__summary {
+        @include paragraph;
+        font-size: 0.9rem;
+        line-height: 22px;
+    }
+
+    &__joinConversation {
+        display: flex;
+        margin-bottom: 40px;
+    
+        &-row {
+            display: flex;
+        }
+    
+        &-heading {
+            font-family: "Avenir Demi Bold";
+            color: $silver;
+        }
+    
+        &-picture {
+            display: inline;
+            margin-top: 20px;
+            margin-right: 20px;
+        }
+    
+        &-profilePicture {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+        }
+    
+        &-details {
+            margin: 0;
+        }
+    
+        &-submit {
+            @include button;
+            width: 100%;
+            height: 50px;
+            font-size: 1rem;
+        }
+    
+        textarea {
+            background-color: $alabaster;
+            border: 2px solid $brainflix-blue;
+            border-radius: 3px;
+            width: 100%;
+            line-height: 2em;
+            padding-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    }
+
+    &__comments {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 32px;
+
+        // img {
+        //     @include tablet {
+        //         width: 30px;
+        //         height: 30px;
+        //     }
+        // }
+
+        // @include tablet {
+        //     margin-left: 80px;
+        //     margin-right: 80px;
+        // }
+
+        // @include desktop {
+        //     margin-left: auto;
+        //     margin-right: auto;
+        // }
+
+        &-card {
+            display: flex;
+            border-bottom: 1px solid $mercury;
+    
+            &:first-of-type {
+                border-top: 1px solid $mercury;
+            }
+    
+            // @include tablet {
+            //     width: 100%;
+            // }
+    
+            // @include desktop {
+            //     width: 530px;
+            // }
+        }
+
+        &-profilePicture {
+            margin-top: 12px;
+            margin-right: 20px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+            }
+        }
+
+        &-details {
+            p {
+                display: inline-block;
+            }
+    
+            & > p {
+                margin-top: 0;
+            }
+    
+            // @include desktop {
+            //     width: 460px;
+            // }
+        }
+
+        &-nameAndDate {
+            display: flex;
+            justify-content: space-between;
+    
+            // @include tablet {
+            //     justify-content: flex-start;
+            // }
+    
+            &-name {
+                font-family: "Avenir Demi Bold";
+            
+                // @include tablet {
+                //     margin-right: 10px;
+                // }
+            }
+    
+            &-date {
+                color: $silver;
+            }
+        }
+
+
+    }
+
+    
+}

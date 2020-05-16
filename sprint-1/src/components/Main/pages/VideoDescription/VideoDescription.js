@@ -1,20 +1,72 @@
 import React from "react";
+import "./VideoDescription.scss";
 import iconViews from "../../../../assets/icons/svg/Icon-views.svg";
 import iconLikes from "../../../../assets/icons/svg/Icon-likes.svg";
+import profilePicure from "../../../../assets/images/profile-picture.jpeg";
 
-const VideoDescription = () => (
-    <section className="main__videoDescription">
-        <div className="main__videoTitle">
-            <h1>BMX Rampage: 2018 Highlights</h1>
-            <h3>By Red Cow</h3> <span> - 12/18/2018</span><br></br>
-            <img src={iconViews}/> <span>1,000,023</span><br></br>
-            <img src={iconLikes}/> <span>110,985</span>
+const VideoDescription = (props) => (
+    <section className="videoDescription">
+        <div className="videoDescription__title">
+            <h1>{props.title}</h1>
+            
+            <div className="videoDescription__channel">
+                <h3>By {props.channel}</h3> 
+                <span className="videoDescription__channel-date">{props.timestamp}</span>
+            </div>
+
+            <div class="videoDescription__icons">
+                <img src={iconViews} alt="Views-Icon" /> <span>{props.views}</span>
+                <img src={iconLikes} alt="Likes-Icon" /> <span>{props.likes}</span>
+            </div>
         </div>
-        <div className="main__videoSummary">
-            <p>On a gusty day in Southern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event veteran Kyle Strait, who won the event for the second time -- eight years after his first Red Cow Rampage title</p>
+
+        <hr className="videoDescription__divider"></hr>
+
+        <div className="videoDescription__summary">
+            <p>{props.description}</p>
         </div>
-        <div className="main__videoComments">
-            <p>Array of Comments</p>
+
+        <div className="videoDescription__conversation">
+            <h2 className="videoDescription__title">3 Comments</h2>
+
+            <div className="videoDescription__joinConversation">
+                <form action="" method="" class="videoDescription__joinConversation-form">
+                    <div class="videoDescription__joinConversation-row">
+                        <div class="videoDescription__joinConversation-picture">
+                            <img class="videoDescription__joinConversation-profilePicture" src={profilePicure} alt="profile-picture" />
+                        </div>
+                        <div class="videoDescription__joinConversation-details">
+                            <label for="comment" class="videoDescription__joinConversation-heading">JOIN THE CONVERSATION</label>
+                            <textarea name="comment" cols="30" rows="5" placeholder="Add a new comment"></textarea>
+                            <div class="videoDescription__joinConversation-submit-button">
+                                <button type="submit" class="videoDescription__joinConversation-submit">COMMENT</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <div className="videoDescription__comments">
+                { props.comments.map((comment, i) => {
+                    return (
+                        <div className="videoDescription__comments-card">
+                            <div className="videoDescription__comments-profilePicture">
+                                <img src={comment.profilePicture}></img>
+                            </div>
+                            <div className="videoDescription__comments-details">
+                                <div className="videoDescription__comments-nameAndDate">
+                                    <p className="videoDescription__comments-nameAndDate-name">{comment.name}</p>
+                                    <p className="videoDescription__comments-nameAndDate-date">{comment.date}</p>
+                                </div>
+                                <p className="videoDescription__comments-comment">
+                                    {comment.comment}
+                                </p>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     </section>
 )

@@ -1,7 +1,10 @@
+@import "./typography";
+
 @mixin button {
+    font-family: "Avenir Bold";
     background-color: $brainflix-blue;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     color: $white;
     height: 100%;
     cursor: pointer;
@@ -10,4 +13,56 @@
     &:hover {
         background-color: $brainflix-dark-blue;
     }
+}
+
+@mixin heading-1 {
+    font-family: "Avenir Bold";
+    font-size: 1.8rem;
+    line-height: 32px;
+
+    // @include tablet {
+    //     font-size: 2.25rem;
+    //     line-height: 68px;
+}
+
+@mixin heading-2 {
+    font-family: "Avenir Demi Bold";
+    font-size: 1.2rem;
+    line-height: 22px;
+
+    // @include tablet {
+    //     font-size: 1.5rem;
+    //     line-height: 32px;
+    // }
+}
+
+@mixin heading-3 {
+    font-family: "Avenir Demi Bold";
+    font-size: 1.1rem;
+    line-height: 18px;
+
+    // @include tablet {
+    //     font-size: 1rem;
+    //     line-height: 24px;
+    // }
+}
+
+@mixin heading-4 {
+    font-size: 1.1rem;
+    line-height: 18px;
+
+    // @include tablet {
+    //     font-size: 0.875rem;
+    //     line-height: 22px;
+    // }
+}
+
+@mixin heading-5 {
+    font-size: 0.9rem;
+    line-height: 20px;
+}
+
+@mixin paragraph {
+    font-size: 1rem;
+    color: $black;
 }

@@ -1,7 +1,50 @@
+@import "../../../../styles/partials/variables";
+
 .mainVideo {
     margin-top: 16px;
 
     &__video {
         width: 100%;
+    }
+
+    &__controls {
+        margin-left: 16px;
+        margin-right: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__playPause {
+        position: relative;
+        background-color: $black;
+        border: none;
+        opacity: .9;
+        width: 15%;
+        height: 40px;
+        margin-top: -70px;
+        margin-right: 10px;
+    }
+
+    &__progress {
+        position: relative;
+        background-color: $black;
+        border: none;
+        opacity: .9;
+        width: 65%;
+        height: 40px;
+        margin-top: -70px;
+        margin-right: 10px;
+    }
+
+    &__screen-volume {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        background-color: $black;
+        border: none;
+        opacity: .9;
+        width: 20%;
+        height: 40px;
+        margin-top: -70px;
     }
 }

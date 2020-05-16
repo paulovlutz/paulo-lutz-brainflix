@@ -1,6 +1,19 @@
-.main {
+.singleNextVideo {
+    display: flex;
+    margin-bottom: 24px;
 
     &__thumbnail {
-        width: 100px;
+        width: 120px;
+        height: 70px;
+        object-fit: cover;
+    }
+
+    &__details {
+        margin-left: 16px;
+
+        &-title {
+            margin-top: 0;
+            font-weight: bold;
+        }
     }
 }

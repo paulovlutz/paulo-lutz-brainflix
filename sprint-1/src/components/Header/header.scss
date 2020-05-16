@@ -1,5 +1,6 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/mixins";
+@import "../../styles/partials/typography";
 
 .header {
     margin-left: 16px;
@@ -36,6 +37,7 @@
         background: url(../../assets/icons/svg/Icon-search.svg) no-repeat scroll 7px 15px;
         padding-left: 35px;
         border: 1px solid $mercury;
+        border-radius: 5px;
     }
 
     &__button {
@@ -46,7 +48,8 @@
     }
 
     &__profile-picture {
-        width: 80px;
-        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
     }
 }
