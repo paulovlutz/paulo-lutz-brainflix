@@ -27,7 +27,7 @@ const VideoDescription = (props) => (
         </div>
 
         <div className="videoDescription__conversation">
-            <h2 className="videoDescription__title">3 Comments</h2>
+            <h2 className="videoDescription__title-conversation">3 Comments</h2>
 
             <div className="videoDescription__joinConversation">
                 <form action="" method="" class="videoDescription__joinConversation-form">
@@ -36,8 +36,10 @@ const VideoDescription = (props) => (
                             <img class="videoDescription__joinConversation-profilePicture" src={profilePicure} alt="profile-picture" />
                         </div>
                         <div class="videoDescription__joinConversation-details">
-                            <label for="comment" class="videoDescription__joinConversation-heading">JOIN THE CONVERSATION</label>
-                            <textarea name="comment" cols="30" rows="5" placeholder="Add a new comment"></textarea>
+                            <div class="videoDescription__joinConversation-details-title">
+                                <label for="comment" class="videoDescription__joinConversation-heading">JOIN THE CONVERSATION</label>
+                            </div>
+                            <textarea name="comment" cols="30" rows="5" placeholder="Write comment here"></textarea>
                             <div class="videoDescription__joinConversation-submit-button">
                                 <button type="submit" class="videoDescription__joinConversation-submit">COMMENT</button>
                             </div>

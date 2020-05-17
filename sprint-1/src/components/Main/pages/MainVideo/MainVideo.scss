@@ -1,10 +1,22 @@
 @import "../../../../styles/partials/variables";
+@import "../../../../styles/partials/mixins";
 
 .mainVideo {
     margin-top: 16px;
 
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $black;
+    }
+
     &__video {
         width: 100%;
+
+        @include tablet {
+            width: 700px;
+        }
     }
 
     &__controls {
@@ -23,6 +35,11 @@
         height: 40px;
         margin-top: -70px;
         margin-right: 10px;
+
+        @include tablet {
+            height: 35px;
+            width: 10%;
+        }
     }
 
     &__progress {
@@ -34,6 +51,40 @@
         height: 40px;
         margin-top: -70px;
         margin-right: 10px;
+
+        @include tablet {
+            height: 35px;
+            width: 519px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__progressBar {
+
+        @include tablet {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 80%;
+            height: 5px;
+            padding-left: 10px;
+    
+            &::-webkit-progress-bar {
+                background-color: $complete-black;
+            }
+        }
+    }
+
+    &__progressTime {
+        display: none;
+
+        @include tablet {
+            font-size: 0.8rem;
+            display: inline;
+            color: $white;
+            margin-left: 16px;
+        }
+
     }
 
     &__screen-volume {
@@ -46,5 +97,10 @@
         width: 20%;
         height: 40px;
         margin-top: -70px;
+
+        @include tablet {
+            height: 35px;
+            width: 15%;
+        }
     }
 }

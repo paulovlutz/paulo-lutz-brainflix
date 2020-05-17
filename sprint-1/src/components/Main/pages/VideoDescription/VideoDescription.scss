@@ -4,7 +4,11 @@
 .videoDescription {
     margin: 20px 16px;
 
-    &__title 
+    @include tablet {
+        margin: 20px 20px;
+    }
+
+    &__title {
     
         h1 {
             @include heading-1;  
@@ -16,11 +20,25 @@
             font-size: 1.2rem;
             margin-right: 10px;
         }
+        
+        &-conversation {
+            @include heading-2;
+
+            @include tablet {
+                margin-top: 50px;
+                // font-size: 1rem;
+            }
+        }
+    }
 
     &__channel {
         display: flex;
         align-items: center;
         margin-bottom: 5px;
+
+        @include tablet {
+            display: inline-flex;
+        }
 
         &-date {
             color: $silver;
@@ -30,6 +48,11 @@
     &__icons {
         display: flex;
         margin-bottom: 30px;
+
+        @include tablet {
+            display: inline-flex;
+            margin-left: 43%;
+        }
 
         span {
             margin-right: 10px;
@@ -46,6 +69,11 @@
         @include paragraph;
         font-size: 0.9rem;
         line-height: 22px;
+
+        @include tablet {
+            margin-top: 30px;
+            width: 70%;
+        }
     }
 
     &__joinConversation {
@@ -59,6 +87,10 @@
         &-heading {
             font-family: "Avenir Demi Bold";
             color: $silver;
+
+            @include tablet {
+                display: inline-block;
+            }
         }
     
         &-picture {
@@ -75,6 +107,26 @@
     
         &-details {
             margin: 0;
+            flex-grow: 1;
+
+            @include tablet {
+                display: flex;
+                
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            &-title {
+                @include tablet {
+                    width: 100%;
+                }
+            }
+        }
+
+        &-submit-button {
+            @include tablet {
+                width: 140px;
+            }
         }
     
         &-submit {
@@ -85,15 +137,19 @@
         }
     
         textarea {
-            background-color: $alabaster;
-            border: 2px solid $brainflix-blue;
-            border-radius: 3px;
+            @include textarea;
+
+            @include tablet {
+                width: 70%;
+                margin-right: 30px;
+                height: 50px;
+                font-size: 1rem;
+                line-height: 40px;
+            }
+        }
+
+        &-form {
             width: 100%;
-            line-height: 2em;
-            padding-left: 10px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
         }
     }
 
@@ -103,18 +159,6 @@
         flex-direction: column;
 
         margin-top: 32px;
-
-        // img {
-        //     @include tablet {
-        //         width: 30px;
-        //         height: 30px;
-        //     }
-        // }
-
-        // @include tablet {
-        //     margin-left: 80px;
-        //     margin-right: 80px;
-        // }
 
         // @include desktop {
         //     margin-left: auto;
@@ -129,10 +173,6 @@
                 border-top: 1px solid $mercury;
             }
     
-            // @include tablet {
-            //     width: 100%;
-            // }
-    
             // @include desktop {
             //     width: 530px;
             // }
@@ -146,6 +186,11 @@
                 width: 50px;
                 height: 50px;
                 border-radius: 100%;
+
+                @include tablet {
+                    width: 30px;
+                    height: 30px;
+                }
             }
         }
 
@@ -167,16 +212,16 @@
             display: flex;
             justify-content: space-between;
     
-            // @include tablet {
-            //     justify-content: flex-start;
-            // }
+            @include tablet {
+                justify-content: flex-start;
+            }
     
             &-name {
                 font-family: "Avenir Demi Bold";
             
-                // @include tablet {
-                //     margin-right: 10px;
-                // }
+                @include tablet {
+                    margin-right: 10px;
+                }
             }
     
             &-date {

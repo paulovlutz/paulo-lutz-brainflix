@@ -1,5 +1,23 @@
 @import "./typography";
 
+@mixin mobile {
+    @media screen and (min-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop) {
+        @content;
+    }
+}
+
 @mixin button {
     font-family: "Avenir Bold";
     background-color: $brainflix-blue;
@@ -13,6 +31,18 @@
     &:hover {
         background-color: $brainflix-dark-blue;
     }
+}
+
+@mixin textarea {
+    background-color: $alabaster;
+    border: 2px solid $brainflix-blue;
+    border-radius: 3px;
+    width: 100%;
+    line-height: 2em;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
 @mixin heading-1 {
