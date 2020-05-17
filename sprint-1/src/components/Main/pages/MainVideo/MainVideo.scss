@@ -17,6 +17,11 @@
         @include tablet {
             width: 700px;
         }
+
+        @include desktop {
+            width: 944px;
+            height: 100%;
+        }
     }
 
     &__controls {
@@ -24,6 +29,11 @@
         margin-right: 16px;
         display: flex;
         align-items: center;
+
+        @include desktop {
+            justify-content: center;
+            width: 100%;
+        }
     }
 
     &__playPause {
@@ -39,6 +49,10 @@
         @include tablet {
             height: 35px;
             width: 10%;
+        }
+
+        @include desktop {
+            width: 5%;
         }
     }
 
@@ -58,6 +72,10 @@
             display: flex;
             align-items: center;
         }
+
+        @include desktop {
+            width: 751px;
+        }
     }
 
     &__progressBar {
@@ -73,6 +91,10 @@
                 background-color: $complete-black;
             }
         }
+
+        @include desktop {
+            width: 85%;
+        }
     }
 
     &__progressTime {
@@ -85,6 +107,9 @@
             margin-left: 16px;
         }
 
+        @include desktop {
+            margin-left: 25px;
+        }
     }
 
     &__screen-volume {
@@ -101,6 +126,10 @@
         @include tablet {
             height: 35px;
             width: 15%;
+        }
+
+        @include desktop {
+            width: 7%;
         }
     }
 }

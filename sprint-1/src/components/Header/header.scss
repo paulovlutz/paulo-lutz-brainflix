@@ -19,6 +19,11 @@
         height: 80px;
     }
 
+    @include desktop {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
     &__image {
         text-align: center;
         width: 100%;
@@ -28,11 +33,20 @@
             width: 20%;
             margin-right: 80px;
         }
+
+        @include desktop {
+            width: 0;
+            margin-right: 509px;
+        }
     }
 
     &__logo {
         height: 30px;
         margin-bottom: 8px;
+
+        @include desktop {
+            height: 25px;
+        }
     }
 
     &__form {
@@ -57,6 +71,10 @@
             margin-bottom: 0;
             font-size: 1rem;
         }
+
+        @include desktop {
+            font-size: 0.9rem;
+        }
     }
 
     &__button {
@@ -68,6 +86,10 @@
         @include tablet {
             width: 60%;
             height: 50px;
+        }
+
+        @include desktop {
+            font-size: 1rem;
         }
     }
 

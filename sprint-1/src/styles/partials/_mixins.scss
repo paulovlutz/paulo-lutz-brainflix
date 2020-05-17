@@ -78,6 +78,7 @@
 }
 
 @mixin heading-4 {
+    font-family: "Avenir Regular";
     font-size: 1.1rem;
     line-height: 18px;
 
@@ -88,11 +89,13 @@
 }
 
 @mixin heading-5 {
+    font-family: "Avenir Regular";
     font-size: 0.9rem;
     line-height: 20px;
 }
 
 @mixin paragraph {
+    font-family: "Avenir Regular";
     font-size: 1rem;
     color: $black;
 }

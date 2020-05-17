@@ -7,9 +7,9 @@ const SingleNextVideo = props => {
             <div>
                 <img src={props.image} className="singleNextVideo__thumbnail" />
             </div>
-            <div class="singleNextVideo__details">
-                <p class="singleNextVideo__details-title">{props.title}</p>
-                <p>{props.channel}</p>
+            <div className="singleNextVideo__details">
+                <p className="singleNextVideo__details-title">{props.title}</p>
+                <p className="singleNextVideo__details-channel">{props.channel}</p>
             </div>
         </section>
     )

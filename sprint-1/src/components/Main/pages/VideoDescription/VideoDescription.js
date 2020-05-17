@@ -7,10 +7,10 @@ import profilePicure from "../../../../assets/images/profile-picture.jpeg";
 const VideoDescription = (props) => (
     <section className="videoDescription">
         <div className="videoDescription__title">
-            <h1>{props.title}</h1>
+            <h1 className="videoDescription__videoTitle">{props.title}</h1>
             
             <div className="videoDescription__channel">
-                <h3>By {props.channel}</h3> 
+                <h3 className="videoDescription__channel-author">By {props.channel}</h3> 
                 <span className="videoDescription__channel-date">{props.timestamp}</span>
             </div>
 
