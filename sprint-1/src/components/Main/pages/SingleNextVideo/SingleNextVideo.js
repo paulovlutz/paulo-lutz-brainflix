@@ -5,7 +5,7 @@ const SingleNextVideo = props => {
     return (
         <section className="singleNextVideo">
             <div>
-                <img src={props.image} className="singleNextVideo__thumbnail" />
+                <img src={props.image} alt="Video-Thumbnail" className="singleNextVideo__thumbnail" />
             </div>
             <div className="singleNextVideo__details">
                 <p className="singleNextVideo__details-title">{props.title}</p>

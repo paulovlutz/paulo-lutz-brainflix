@@ -14,7 +14,7 @@ const VideoDescription = (props) => (
                 <span className="videoDescription__channel-date">{props.timestamp}</span>
             </div>
 
-            <div class="videoDescription__icons">
+            <div className="videoDescription__icons">
                 <img src={iconViews} alt="Views-Icon" /> <span>{props.views}</span>
                 <img src={iconLikes} alt="Likes-Icon" /> <span>{props.likes}</span>
             </div>
@@ -30,18 +30,18 @@ const VideoDescription = (props) => (
             <h2 className="videoDescription__title-conversation">3 Comments</h2>
 
             <div className="videoDescription__joinConversation">
-                <form action="" method="" class="videoDescription__joinConversation-form">
-                    <div class="videoDescription__joinConversation-row">
-                        <div class="videoDescription__joinConversation-picture">
-                            <img class="videoDescription__joinConversation-profilePicture" src={profilePicure} alt="profile-picture" />
+                <form action="" method="" className="videoDescription__joinConversation-form">
+                    <div className="videoDescription__joinConversation-row">
+                        <div className="videoDescription__joinConversation-picture">
+                            <img className="videoDescription__joinConversation-profilePicture" src={profilePicure} alt="Profile-Picture" />
                         </div>
-                        <div class="videoDescription__joinConversation-details">
-                            <div class="videoDescription__joinConversation-details-title">
-                                <label for="comment" class="videoDescription__joinConversation-heading">JOIN THE CONVERSATION</label>
+                        <div className="videoDescription__joinConversation-details">
+                            <div className="videoDescription__joinConversation-details-title">
+                                <label htmlFor="comment" className="videoDescription__joinConversation-heading">JOIN THE CONVERSATION</label>
                             </div>
                             <textarea name="comment" cols="30" rows="5" placeholder="Write comment here"></textarea>
-                            <div class="videoDescription__joinConversation-submit-button">
-                                <button type="submit" class="videoDescription__joinConversation-submit">COMMENT</button>
+                            <div className="videoDescription__joinConversation-submit-button">
+                                <button type="submit" className="videoDescription__joinConversation-submit">COMMENT</button>
                             </div>
                         </div>
                     </div>
@@ -52,9 +52,9 @@ const VideoDescription = (props) => (
             <div className="videoDescription__comments">
                 { props.comments.map((comment, i) => {
                     return (
-                        <div className="videoDescription__comments-card">
+                        <div className="videoDescription__comments-card" key={i}>
                             <div className="videoDescription__comments-profilePicture">
-                                <img src={comment.profilePicture}></img>
+                                <img src={comment.profilePicture} alt="Profile-Picture" ></img>
                             </div>
                             <div className="videoDescription__comments-details">
                                 <div className="videoDescription__comments-nameAndDate">

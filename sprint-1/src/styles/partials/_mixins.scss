@@ -31,11 +31,16 @@
     &:hover {
         background-color: $brainflix-dark-blue;
     }
+
+    @include tablet {
+        font-size: 1rem;
+    }
 }
 
 @mixin textarea {
+    font-family: "Avenir Regular";
     background-color: $alabaster;
-    border: 2px solid $brainflix-blue;
+    border: 2px solid $mercury;
     border-radius: 3px;
     width: 100%;
     line-height: 2em;
@@ -49,43 +54,24 @@
     font-family: "Avenir Bold";
     font-size: 1.8rem;
     line-height: 32px;
-
-    // @include tablet {
-    //     font-size: 2.25rem;
-    //     line-height: 68px;
 }
 
 @mixin heading-2 {
     font-family: "Avenir Demi Bold";
     font-size: 1.2rem;
     line-height: 22px;
-
-    // @include tablet {
-    //     font-size: 1.5rem;
-    //     line-height: 32px;
-    // }
 }
 
 @mixin heading-3 {
     font-family: "Avenir Demi Bold";
     font-size: 1.1rem;
     line-height: 18px;
-
-    // @include tablet {
-    //     font-size: 1rem;
-    //     line-height: 24px;
-    // }
 }
 
 @mixin heading-4 {
     font-family: "Avenir Regular";
     font-size: 1.1rem;
     line-height: 18px;
-
-    // @include tablet {
-    //     font-size: 0.875rem;
-    //     line-height: 22px;
-    // }
 }
 
 @mixin heading-5 {

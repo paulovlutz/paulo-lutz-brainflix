@@ -3,8 +3,6 @@ import logo from "../../assets/logo/Logo-brainflix.svg";
 import profilePicture from "../../assets/images/Mohan-muruge.jpg";
 import "./header.scss";
 
-// console.log(logo);
-
 const Header = () => (
     <header className="header">
         <Brand/>
@@ -18,7 +16,7 @@ const Header = () => (
 
 const Brand = () => (
     <div className="header__image">
-        <img src={logo} alt="Logo" className="header__logo" />
+        <img src={logo} alt="Brand-Logo" className="header__logo" />
     </div>
 );
 
@@ -33,7 +31,7 @@ const UploadButton = () => (
 )
 
 const ProfilePicture = () => (
-    <img src={profilePicture} alt="Profile Picture" className="header__profile-picture" />
+    <img src={profilePicture} alt="Profile-Picture" className="header__profile-picture" />
 )
 
 export default Header;

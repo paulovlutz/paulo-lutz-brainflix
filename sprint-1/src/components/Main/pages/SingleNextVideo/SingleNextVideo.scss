@@ -36,14 +36,12 @@
         &-title {
             margin-top: 0;
             font-family: "Avenir Demi Bold";
-
-            @include desktop {
-                font-size: 0.9rem;
-            }
+            font-size: 0.9rem;
         }
 
         &-channel {
             @include paragraph;
+            font-size: 0.9rem;
 
             @include desktop {
                 font-size: 0.8rem;
