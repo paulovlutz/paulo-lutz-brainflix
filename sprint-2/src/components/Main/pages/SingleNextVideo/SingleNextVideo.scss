@@ -1,0 +1,52 @@
+@import "../../../../styles/partials/mixins";
+@import "../../../../styles/partials/variables";
+@import "../../../../styles/partials/typography";
+
+.singleNextVideo {
+    display: flex;
+    margin-bottom: 24px;
+
+    @include tablet {
+        width: 45%;
+    }
+
+    @include desktop {
+        width: 100%;
+    }
+
+    &__thumbnail {
+        width: 120px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 5px;
+
+        @include tablet {
+            height: 80px;
+        }
+
+        @include desktop {
+            height: 70px;
+            width: 120px;
+        }
+    }
+
+    &__details {
+        margin-left: 16px;
+
+        &-title {
+            margin-top: 0;
+            font-family: "Avenir Demi Bold";
+            font-size: 0.9rem;
+        }
+
+        &-channel {
+            @include paragraph;
+            font-size: 0.9rem;
+
+            @include desktop {
+                font-size: 0.8rem;
+                margin: 0;
+            }
+        }
+    }
+}
