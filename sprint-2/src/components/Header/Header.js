@@ -16,7 +16,7 @@ const Header = () => (
 
 const Brand = () => (
     <div className="header__image">
-        <img src={logo} alt="Brand-Logo" className="header__logo" />
+        <a href="/"><img src={logo} alt="Brand-Logo" className="header__logo" /></a>
     </div>
 );
 
