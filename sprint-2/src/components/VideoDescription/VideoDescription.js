@@ -1,8 +1,8 @@
 import React from "react";
 import "./VideoDescription.scss";
-import iconViews from "../../../../assets/icons/svg/Icon-views.svg";
-import iconLikes from "../../../../assets/icons/svg/Icon-likes.svg";
-import profilePicure from "../../../../assets/images/profile-picture.jpeg";
+import iconViews from "../../assets/icons/svg/Icon-views.svg";
+import iconLikes from "../../assets/icons/svg/Icon-likes.svg";
+import profilePicure from "../../assets/images/profile-picture.jpeg";
 
 const VideoDescription = (props) => (
     <section className="videoDescription">

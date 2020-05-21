@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import "./index.css";
-import Header from "../../Header/Header";
-import Main from "../../Main/Main";
+import Header from "../Header/Header";
 
-class HomePage extends React.Component {
+class UploadVideo extends React.Component {
   render() {
     return (
       <React.Fragment>
         <Header />
-        <Main />
       </React.Fragment>
     )
   }
 }
 
-export default HomePage;
+export default UploadVideo;

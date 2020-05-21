@@ -1,7 +1,7 @@
 import React from "react";
-import playButton from "../../../../assets/icons/svg/Icon-play.svg";
-import fullScreenButton from "../../../../assets/icons/svg/Icon-fullscreen.svg";
-import volumeButton from "../../../../assets/icons/svg/Icon-volume.svg";
+import playButton from "../../assets/icons/svg/Icon-play.svg";
+import fullScreenButton from "../../assets/icons/svg/Icon-fullscreen.svg";
+import volumeButton from "../../assets/icons/svg/Icon-volume.svg";
 import "./MainVideo.scss";
 
 const MainVideo = (props) => (

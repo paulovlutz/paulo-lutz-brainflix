@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import imageVideo1 from "../../../../assets/images/video-list-1.jpg";
-import imageVideo2 from "../../../../assets/images/video-list-2.jpg";
-import imageVideo3 from "../../../../assets/images/video-list-3.jpg";
-import imageVideo4 from "../../../../assets/images/video-list-4.jpg";
-import imageVideo5 from "../../../../assets/images/video-list-5.jpg";
-import imageVideo6 from "../../../../assets/images/video-list-6.jpg";
-import imageVideo7 from "../../../../assets/images/video-list-7.jpg";
-import imageVideo8 from "../../../../assets/images/video-list-8.jpg";
+import imageVideo1 from "../../assets/images/video-list-1.jpg";
+import imageVideo2 from "../../assets/images/video-list-2.jpg";
+import imageVideo3 from "../../assets/images/video-list-3.jpg";
+import imageVideo4 from "../../assets/images/video-list-4.jpg";
+import imageVideo5 from "../../assets/images/video-list-5.jpg";
+import imageVideo6 from "../../assets/images/video-list-6.jpg";
+import imageVideo7 from "../../assets/images/video-list-7.jpg";
+import imageVideo8 from "../../assets/images/video-list-8.jpg";
 import SingleNextVideo from "../SingleNextVideo/SingleNextVideo";
 import "./NextVideos.scss";
 

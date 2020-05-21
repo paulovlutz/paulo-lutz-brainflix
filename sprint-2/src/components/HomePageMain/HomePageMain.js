@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./Main.scss";
+import "./HomePageMain.scss";
 import imageVideo from "../../assets/images/video-list-0.jpg";
 import profilePicture from "../../assets/images/profile-picture.jpeg";
-import MainVideo from "./pages/MainVideo/MainVideo";
-import VideoDescription from "./pages/VideoDescription/VideoDescription";
-import NextVideos from "./pages/NextVideos/NextVideos";
+import MainVideo from "../MainVideo/MainVideo";
+import VideoDescription from "../VideoDescription/VideoDescription";
+import NextVideos from "../NextVideos/NextVideos";
 
 class Main extends Component {
     state = {
