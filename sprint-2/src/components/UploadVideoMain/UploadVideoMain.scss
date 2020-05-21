@@ -1,0 +1,55 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.upload {
+    margin: 24px 16px 0;
+
+    &__divider {
+        @include divider;
+    }
+
+    &__title {
+        @include heading-1;
+    }
+
+    &__video {
+        display: flex;
+        height: 153px;
+        width: 288px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+    }
+
+    &__videoTitle {
+        @include textinput;
+        margin-bottom: 20px;
+    }
+
+    &__textarea {
+        @include textinput;
+        margin-bottom: 20px;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__submit {
+        @include button;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    &__cancel {
+        @include button-reverse;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    &__label {
+        font-family: "Avenir Demi Bold";
+        color: $silver;
+    }
+}

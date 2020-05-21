@@ -87,11 +87,7 @@
     }
 
     &__divider {
-        border: 0.5px solid $mercury;
-
-        @include desktop {
-            width: 100%;
-        }
+        @include divider;
     }
 
     &__summary {
@@ -199,7 +195,7 @@
         }
     
         textarea {
-            @include textarea;
+            @include textinput;
 
             @include tablet {
                 width: 70%;
