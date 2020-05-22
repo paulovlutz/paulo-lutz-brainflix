@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import logo from "../../assets/logo/Logo-brainflix.svg";
 import profilePicture from "../../assets/images/Mohan-muruge.jpg";
 import "./header.scss";
@@ -16,7 +17,7 @@ const Header = () => (
 
 const Brand = () => (
     <div className="header__image">
-        <a href="/"><img src={logo} alt="Brand-Logo" className="header__logo" /></a>
+        <Link to="/"><img src={logo} alt="Brand-Logo" className="header__logo" /></Link>
     </div>
 );
 
@@ -27,7 +28,7 @@ const Search = () => (
 );
 
 const UploadButton = () => (
-    <button className="header__button button">+ UPLOAD</button>
+    <Link to="/upload" className="header__link"><button className="header__button button">+ UPLOAD</button></Link>
 )
 
 const ProfilePicture = () => (
