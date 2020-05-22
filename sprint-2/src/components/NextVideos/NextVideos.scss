@@ -23,4 +23,9 @@
         display: inline-flex;
         flex-direction: column;
     }
+
+    &__link {
+        text-decoration: none;
+        color: $black;
+    }
 }

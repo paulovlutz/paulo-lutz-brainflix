@@ -4,8 +4,12 @@ import fullScreenButton from "../../assets/icons/svg/Icon-fullscreen.svg";
 import volumeButton from "../../assets/icons/svg/Icon-volume.svg";
 import "./MainVideo.scss";
 
-const MainVideo = (props) => (
-    <section className="mainVideo">
+const MainVideo = (props) => {
+
+    console.log(props);
+
+    return(
+        <section className="mainVideo">
         <video poster={props.image} className="mainVideo__video"></video>
         <div className="mainVideo__controls">
             <button className="mainVideo__playPause" type="button" data-state="play"><img src={playButton} alt="Play-Button" /> </button>
@@ -21,6 +25,7 @@ const MainVideo = (props) => (
             </div>
         </div>
     </section>
-)
+    )
+}
 
 export default MainVideo;

@@ -2,7 +2,7 @@ import React from "react";
 import "./VideoDescription.scss";
 import iconViews from "../../assets/icons/svg/Icon-views.svg";
 import iconLikes from "../../assets/icons/svg/Icon-likes.svg";
-import profilePicure from "../../assets/images/profile-picture.jpeg";
+import profilePicture from "../../assets/images/profile-picture.jpeg";
 
 const VideoDescription = (props) => (
     <section className="videoDescription">
@@ -33,7 +33,7 @@ const VideoDescription = (props) => (
                 <form action="" method="" className="videoDescription__joinConversation-form">
                     <div className="videoDescription__joinConversation-row">
                         <div className="videoDescription__joinConversation-picture">
-                            <img className="videoDescription__joinConversation-profilePicture" src={profilePicure} alt="Profile-Picture" />
+                            <img className="videoDescription__joinConversation-profilePicture" src={profilePicture} alt="Profile-Picture" />
                         </div>
                         <div className="videoDescription__joinConversation-details">
                             <div className="videoDescription__joinConversation-details-title">
@@ -50,11 +50,11 @@ const VideoDescription = (props) => (
 
 
             <div className="videoDescription__comments">
-                { props.comments.map((comment, i) => {
+                { props.comments.map(comment => {
                     return (
-                        <div className="videoDescription__comments-card" key={i}>
+                        <div className="videoDescription__comments-card">
                             <div className="videoDescription__comments-profilePicture">
-                                <img src={comment.profilePicture} alt="Profile-Picture" ></img>
+                                <img src={profilePicture} alt="Profile-Picture"></img>
                             </div>
                             <div className="videoDescription__comments-details">
                                 <div className="videoDescription__comments-nameAndDate">
