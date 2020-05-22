@@ -10,7 +10,7 @@ ReactDOM.render(
     <Switch>
       <Route path="/" exact component={HomePage} />
       <Route path="/upload" component={UploadVideo} />
-      <Route path="/upload/:id" component={UploadVideo} />
+      <Route path="/:id" component={HomePage} />
     </Switch>
   </BrowserRouter>
   ,document.getElementById('root')

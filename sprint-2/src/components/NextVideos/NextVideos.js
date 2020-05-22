@@ -17,7 +17,6 @@ class NextVideos extends Component {
             .get(URL+"videos"+API_KEY)
             .then(result => {
                 let eachVideo = result.data;
-                console.log(result)
                 this.setState({
                     sideVideos: eachVideo
                 })
@@ -29,7 +28,7 @@ class NextVideos extends Component {
             <section className="nextVideos">
                 <h3 className="nextVideos__title">NEXT VIDEO</h3>
                 {this.state.sideVideos.map(video => {
-                    return (<Link to={"/upload/"} className="nextVideos__link"><SingleNextVideo key={video.id} title={video.title} channel={video.channel} image={video.image} /></Link>)
+                    return (<Link to={video.id} className="nextVideos__link"><SingleNextVideo key={video.id} title={video.title} channel={video.channel} image={video.image} /></Link>)
                 })}
             </section>
         )
