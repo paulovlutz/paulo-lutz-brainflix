@@ -26,8 +26,6 @@ componentDidMount() {
           this.setState({
               sideVideos: eachVideo
           })
-          console.log("SIDE VIDEOSSSSSS")
-          console.log(this.state.sideVideos);
 
           if (!videoId) {
             const firstVideo = eachVideo[0].id;
@@ -37,11 +35,9 @@ componentDidMount() {
           axios
           .get(URL + "videos/"+videoId + API_KEY)
           .then(result => {
-              console.log("****************")
-              console.log(result.data.comments);
               this.setState({
                   mainVideo: result.data
-              })
+              }) 
           })
       })
 }
@@ -51,8 +47,6 @@ componentDidUpdate(prevProps) {
         axios
             .get(URL + "videos/"+this.props.match.params.id + API_KEY)
             .then(result => {
-                console.log("****************")
-                console.log(result.data.comments);
                 this.setState({
                     mainVideo: result.data
                 })

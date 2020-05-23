@@ -4,6 +4,42 @@ import iconViews from "../../assets/icons/svg/Icon-views.svg";
 import iconLikes from "../../assets/icons/svg/Icon-likes.svg";
 import profilePicture from "../../assets/images/profile-picture.jpeg";
 
+function buildTimeDescription(time) {
+    let currentDate = new Date();
+
+    let msMinute = 60 * 1000;
+    let msHour = msMinute * 60;
+    let msDay = msHour * 24;
+    let msMonth = msDay * 30;
+    let msYear = msDay * 365;
+
+    let difference = currentDate - time;
+
+    if (difference < msMinute) {
+         return "Posted " + Math.round(difference/1000) + "s ago";   
+    }
+
+    else if (difference < msHour) {
+         return "Posted " + Math.round(difference/msMinute) + "m ago";   
+    }
+
+    else if (difference < msDay ) {
+         return "Posted " + Math.round(difference/msHour ) + "h ago";   
+    }
+
+    else if (difference < msMonth) {
+        return "Posted" + Math.round(difference/msDay) + " days ago";   
+    }
+
+    else if (difference < msYear) {
+        return "Posted " + Math.round(difference/msMonth) + " months ago";   
+    }
+
+    else {
+        return "Posted " + Math.round(difference/msYear ) + " years ago";   
+    }
+}
+
 const VideoDescription = (props) => (
     <section className="videoDescription">
         <div className="videoDescription__title">
@@ -11,7 +47,7 @@ const VideoDescription = (props) => (
             
             <div className="videoDescription__channel">
                 <h3 className="videoDescription__channel-author">By {props.channel}</h3> 
-                <span className="videoDescription__channel-date">{props.timestamp}</span>
+                <span className="videoDescription__channel-date">{buildTimeDescription(props.timestamp)}</span>
             </div>
 
             <div className="videoDescription__icons">
@@ -59,7 +95,7 @@ const VideoDescription = (props) => (
                             <div className="videoDescription__comments-details">
                                 <div className="videoDescription__comments-nameAndDate">
                                     <p className="videoDescription__comments-nameAndDate-name">{comment.name}</p>
-                                    <p className="videoDescription__comments-nameAndDate-date">{comment.date}</p>
+                                    <p className="videoDescription__comments-nameAndDate-date">{buildTimeDescription(comment.timestamp)}</p>
                                 </div>
                                 <p className="videoDescription__comments-comment">
                                     {comment.comment}
