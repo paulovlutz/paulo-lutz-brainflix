@@ -16,8 +16,14 @@ class HomePage extends React.Component {
 }
 
 componentDidMount() {
-    axios
-        .get(URL + "videos/"+this.props.match.params.id + API_KEY)
+  let videoId = this.props.match.params.id;
+
+  if (!videoId) {
+    videoId = "1af0jruup5gu";
+  }
+    
+  axios
+        .get(URL + "videos/"+videoId + API_KEY)
         .then(result => {
             console.log("****************")
             console.log(result.data.comments);
