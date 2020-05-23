@@ -8,13 +8,34 @@ const URL = "https://project-2-api.herokuapp.com/";
 const API_KEY = "?api_key=902a8ac9-fa32-406d-9ce8-6f0aea1265a3";
 
 class HomePage extends React.Component {
+  handleCommentSubmit = (event) => {
+    console.log(event);
+    event.preventDefault();
+    let newComment = {
+      name: "BrainStation",
+      comment: event.target.comment.value
+    };
+
+    axios
+        .post(URL+"videos/"+this.state.mainVideo.id+"/comments"+API_KEY,
+        newComment)
+        .then(response => {
+            axios 
+              .get(URL + "videos/"+this.state.mainVideo.id + API_KEY)
+              .then(response => {
+                this.setState({
+                  mainVideo: response.data
+                })
+              })
+        })
+  }
 
   state = {
     sideVideos: [],
     mainVideo: {
         comments: []
     }
-}
+  }
 
 componentDidMount() {
   let videoId = this.props.match.params.id;
@@ -60,7 +81,7 @@ componentDidUpdate(prevProps) {
     return (
       <React.Fragment>
         <Header />
-        <HomePageMain mainVideo={this.state.mainVideo} sideVideos={otherVideos} />
+        <HomePageMain mainVideo={this.state.mainVideo} sideVideos={otherVideos} handleCommentSubmit={this.handleCommentSubmit} />
       </React.Fragment>
     )
   }
