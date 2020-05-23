@@ -10,6 +10,7 @@ const API_KEY = "?api_key=902a8ac9-fa32-406d-9ce8-6f0aea1265a3";
 class HomePage extends React.Component {
 
   state = {
+    sideVideos: [],
     mainVideo: {
         comments: []
     }
@@ -18,19 +19,31 @@ class HomePage extends React.Component {
 componentDidMount() {
   let videoId = this.props.match.params.id;
 
-  if (!videoId) {
-    videoId = "1af0jruup5gu";
-  }
-    
   axios
-        .get(URL + "videos/"+videoId + API_KEY)
-        .then(result => {
-            console.log("****************")
-            console.log(result.data.comments);
-            this.setState({
-                mainVideo: result.data
-            })
-        })
+      .get(URL+"videos"+API_KEY)
+      .then(result => {
+          let eachVideo = result.data;
+          this.setState({
+              sideVideos: eachVideo
+          })
+          console.log("SIDE VIDEOSSSSSS")
+          console.log(this.state.sideVideos);
+
+          if (!videoId) {
+            const firstVideo = eachVideo[0].id;
+            videoId = firstVideo;
+          }
+
+          axios
+          .get(URL + "videos/"+videoId + API_KEY)
+          .then(result => {
+              console.log("****************")
+              console.log(result.data.comments);
+              this.setState({
+                  mainVideo: result.data
+              })
+          })
+      })
 }
 
 componentDidUpdate(prevProps) {
@@ -48,10 +61,12 @@ componentDidUpdate(prevProps) {
 }
 
   render() {
+    let otherVideos = this.state.sideVideos.filter(video => video.id !== this.state.mainVideo.id);
+
     return (
       <React.Fragment>
         <Header />
-        <HomePageMain mainVideo={this.state.mainVideo} />
+        <HomePageMain mainVideo={this.state.mainVideo} sideVideos={otherVideos} />
       </React.Fragment>
     )
   }

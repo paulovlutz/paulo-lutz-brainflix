@@ -23,7 +23,7 @@ class HomePageMain extends Component {
                 timestamp={this.props.mainVideo.timestamp}
                 comments={this.props.mainVideo.comments}
             />
-            <NextVideos/>
+            <NextVideos sideVideos={this.props.sideVideos} />
         </main>
         )
     }
