@@ -4,13 +4,13 @@ import fullScreenButton from "../../assets/icons/svg/Icon-fullscreen.svg";
 import volumeButton from "../../assets/icons/svg/Icon-volume.svg";
 import "./MainVideo.scss";
 
-const MainVideo = (props) => {
+const API_KEY = "?api_key=902a8ac9-fa32-406d-9ce8-6f0aea1265a3";
 
-    console.log(props);
+const MainVideo = (props) => {
 
     return(
         <section className="mainVideo">
-        <video poster={props.image} className="mainVideo__video"></video>
+        <video poster={props.image} src={props.video + API_KEY} className="mainVideo__video"></video>
         <div className="mainVideo__controls">
             <button className="mainVideo__playPause" type="button" data-state="play"><img src={playButton} alt="Play-Button" /> </button>
 

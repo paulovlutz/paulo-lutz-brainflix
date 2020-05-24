@@ -16,15 +16,15 @@ function buildTimeDescription(time) {
     let difference = currentDate - time;
 
     if (difference < msMinute) {
-         return Math.round(difference/1000) + "s ago";   
+        return Math.round(difference/1000) + "s ago";   
     }
 
     else if (difference < msHour) {
-         return Math.round(difference/msMinute) + "m ago";   
+        return Math.round(difference/msMinute) + "m ago";   
     }
 
     else if (difference < msDay ) {
-         return Math.round(difference/msHour ) + "h ago";   
+        return Math.round(difference/msHour ) + "h ago";   
     }
 
     else if (difference < msMonth) {

@@ -1,5 +1,4 @@
 import React from "react";
-// import "./index.css";
 import Header from "../Header/Header";
 import HomePageMain from "../HomePageMain/HomePageMain";
 import axios from "axios";
@@ -20,7 +19,6 @@ class HomePage extends React.Component {
   }
 
   handleCommentSubmit = (event) => {
-    console.log(event);
     event.preventDefault();
     let newComment = {
       name: "BrainStation",
@@ -70,9 +68,17 @@ componentDidMount() {
 }
 
 componentDidUpdate(prevProps) {
-    if (prevProps.match.params.id !== this.props.match.params.id) {
-        this.setMainVideo(this.props.match.params.id);
+  let videoId = this.props.match.params.id;
+
+  let updateVideoId = this.state.sideVideos[0].id;
+
+  if (prevProps.match.params.id !== videoId) {
+    if (!videoId) {
+      videoId = updateVideoId;
     }
+      this.setMainVideo(videoId);
+      window.scrollTo(0,0);
+  }
 }
 
   render() {

@@ -32,7 +32,7 @@ const UploadButton = () => (
 )
 
 const ProfilePicture = () => (
-    <img src={profilePicture} alt="Profile-Picture" className="header__profile-picture" />
+    <img src={profilePicture} alt="Profile" className="header__profile-picture" />
 )
 
 export default Header;

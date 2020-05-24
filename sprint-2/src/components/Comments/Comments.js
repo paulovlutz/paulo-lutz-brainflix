@@ -1,22 +1,22 @@
 import React from "react";
 import "./Comments.scss";
-import axios from "axios";
 import profilePicture from "../../assets/images/profile-picture.jpeg";
-
-const URL = "https://project-2-api.herokuapp.com/";
-const API_KEY = "?api_key=902a8ac9-fa32-406d-9ce8-6f0aea1265a3";
 
 class Comments extends React.Component {
     render() {
+        let orderedComments = this.props.comments;
+        orderedComments.sort(function compare(a, b) {
+            return (b.timestamp - a.timestamp);
+        });
         return (
             <div className="videoDescription__conversation">
-                <h2 className="videoDescription__title-conversation">3 Comments</h2>
+                <h2 className="videoDescription__title-conversation">{orderedComments.length} Comments</h2>
         
                 <div className="videoDescription__joinConversation">
                     <form onSubmit={this.props.handleCommentSubmit} action="" method="" className="videoDescription__joinConversation-form">
                         <div className="videoDescription__joinConversation-row">
                             <div className="videoDescription__joinConversation-picture">
-                                <img className="videoDescription__joinConversation-profilePicture" src={profilePicture} alt="Profile-Picture" />
+                                <img className="videoDescription__joinConversation-profilePicture" src={profilePicture} alt="Profile" />
                             </div>
                             <div className="videoDescription__joinConversation-details">
                                 <div className="videoDescription__joinConversation-details-title">
@@ -32,11 +32,11 @@ class Comments extends React.Component {
                 </div>
     
                 <div className="videoDescription__comments">
-                    { this.props.comments.map(comment => {
+                    { orderedComments.map(comment => {
                         return (
-                            <div className="videoDescription__comments-card">
+                            <div className="videoDescription__comments-card" key={comment.id}>
                                 <div className="videoDescription__comments-profilePicture">
-                                    <img src={profilePicture} alt="Profile-Picture"></img>
+                                    <img src={profilePicture} alt="Profile"></img>
                                 </div>
                                 <div className="videoDescription__comments-details">
                                     <div className="videoDescription__comments-nameAndDate">

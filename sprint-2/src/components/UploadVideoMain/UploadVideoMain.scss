@@ -14,6 +14,7 @@
 
     &__divider {
         @include divider;
+        margin-bottom: 40px;
     }
 
     &__title {
@@ -31,7 +32,7 @@
         width: 288px;
         border-radius: 5px;
         margin-bottom: 20px;
-        margin-top: 5px;
+        margin-top: 10px;
 
         @include tablet {
             width: 344px;
@@ -42,10 +43,7 @@
     &__videoTitle {
         @include textinput;
         margin-bottom: 20px;
-
-        @include tablet {
-            line-height: 40px;
-        }
+        line-height: 40px;
     }
 
     &__textarea {
@@ -56,6 +54,7 @@
     &__buttons {
         display: flex;
         flex-direction: column;
+        margin-bottom: 30px;
 
         @include tablet {
             flex-direction: row-reverse;
