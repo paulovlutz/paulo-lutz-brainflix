@@ -8,6 +8,17 @@ const URL = "https://project-2-api.herokuapp.com/";
 const API_KEY = "?api_key=902a8ac9-fa32-406d-9ce8-6f0aea1265a3";
 
 class HomePage extends React.Component {
+
+  setMainVideo = (mainVideoId) => {
+    axios
+    .get(URL + "videos/"+ mainVideoId + API_KEY)
+    .then(result => {
+        this.setState({
+            mainVideo: result.data
+        })
+    })
+  }
+
   handleCommentSubmit = (event) => {
     console.log(event);
     event.preventDefault();
@@ -15,6 +26,7 @@ class HomePage extends React.Component {
       name: "BrainStation",
       comment: event.target.comment.value
     };
+    event.target.reset();
 
     axios
         .post(URL+"videos/"+this.state.mainVideo.id+"/comments"+API_KEY,
@@ -53,26 +65,14 @@ componentDidMount() {
             videoId = firstVideo;
           }
 
-          axios
-          .get(URL + "videos/"+videoId + API_KEY)
-          .then(result => {
-              this.setState({
-                  mainVideo: result.data
-              }) 
-          })
+          this.setMainVideo(videoId);
       })
 }
 
 componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-        axios
-            .get(URL + "videos/"+this.props.match.params.id + API_KEY)
-            .then(result => {
-                this.setState({
-                    mainVideo: result.data
-                })
-            })
-        }
+        this.setMainVideo(this.props.match.params.id);
+    }
 }
 
   render() {

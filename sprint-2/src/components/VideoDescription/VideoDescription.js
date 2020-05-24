@@ -16,27 +16,27 @@ function buildTimeDescription(time) {
     let difference = currentDate - time;
 
     if (difference < msMinute) {
-         return "Posted " + Math.round(difference/1000) + "s ago";   
+         return Math.round(difference/1000) + "s ago";   
     }
 
     else if (difference < msHour) {
-         return "Posted " + Math.round(difference/msMinute) + "m ago";   
+         return Math.round(difference/msMinute) + "m ago";   
     }
 
     else if (difference < msDay ) {
-         return "Posted " + Math.round(difference/msHour ) + "h ago";   
+         return Math.round(difference/msHour ) + "h ago";   
     }
 
     else if (difference < msMonth) {
-        return "Posted" + Math.round(difference/msDay) + " days ago";   
+        return Math.round(difference/msDay) + " days ago";   
     }
 
     else if (difference < msYear) {
-        return "Posted " + Math.round(difference/msMonth) + " months ago";   
+        return Math.round(difference/msMonth) + " months ago";   
     }
 
     else {
-        return "Posted " + Math.round(difference/msYear ) + " years ago";   
+        return Math.round(difference/msYear ) + " years ago";   
     }
 }
 

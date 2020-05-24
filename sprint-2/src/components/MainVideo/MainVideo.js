@@ -16,7 +16,7 @@ const MainVideo = (props) => {
 
             <div className="mainVideo__progress">
                 <progress className="mainVideo__progressBar" value="0" min="0" max="100"></progress>
-                <div className="mainVideo__progressTime">0:00 / 0:42</div>
+                <div className="mainVideo__progressTime">0:00 / {props.duration}</div>
             </div>
 
             <div className="mainVideo__screen-volume">

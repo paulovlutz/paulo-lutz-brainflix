@@ -11,6 +11,7 @@ class HomePageMain extends Component {
             <main className="main">
             <MainVideo 
                 image={this.props.mainVideo.image}
+                duration={this.props.mainVideo.duration}
             />
             <VideoDescription 
                 title={this.props.mainVideo.title}
@@ -18,7 +19,6 @@ class HomePageMain extends Component {
                 channel={this.props.mainVideo.channel}
                 views={this.props.mainVideo.views}
                 likes={this.props.mainVideo.likes}
-                duration={this.props.mainVideo.duration}
                 video={this.props.mainVideo.video}
                 timestamp={this.props.mainVideo.timestamp}
                 comments={this.props.mainVideo.comments}
