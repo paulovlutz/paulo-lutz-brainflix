@@ -1,0 +1,111 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.upload {
+    margin: 24px 16px 0;
+
+    @include tablet {
+        margin: 24px 20px 0;
+    }
+
+    @include desktop {
+        margin: 0 100px;
+    }
+
+    &__divider {
+        @include divider;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        @include heading-1;
+
+        @include tablet {
+            padding-bottom: 32px;
+            border-bottom: 0.5px solid $mercury;
+        }
+    }
+
+    &__video {
+        display: flex;
+        height: 153px;
+        width: 288px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+
+        @include tablet {
+            width: 344px;
+            height: 183px;
+        }
+    }
+
+    &__videoTitle {
+        @include textinput;
+        margin-bottom: 20px;
+        line-height: 40px;
+    }
+
+    &__textarea {
+        @include textinput;
+        margin-bottom: 20px;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+
+        @include tablet {
+            flex-direction: row-reverse;
+        }
+
+        @include desktop {
+            border-top: 0.5px solid $mercury;
+            padding-top: 30px;
+        }
+    }
+
+    &__submit {
+        @include button;
+        height: 40px;
+        font-size: 1rem;
+
+        @include tablet {
+            margin-left: 30px;
+            width: 160px;
+        }
+    }
+
+    &__cancel {
+        @include button-reverse;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    &__label {
+        font-family: "Avenir Demi Bold";
+        color: $silver;
+
+        @include tablet {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__videoContainer {
+        @include desktop {
+            display: inline-flex;
+            flex-direction: column;
+            width: fit-content;
+            margin-right: 24px;
+        }
+    }
+
+    &__textContainer {
+        @include desktop {
+            display: inline-flex;
+            flex-direction: column;
+            width: 60%;
+        }
+    }
+}
