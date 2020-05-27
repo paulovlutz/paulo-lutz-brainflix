@@ -5,6 +5,7 @@ import axios from "axios";
 
 const URL = "https://project-2-api.herokuapp.com/";
 const API_KEY = "?api_key=902a8ac9-fa32-406d-9ce8-6f0aea1265a3";
+const API_URL = process.env.REACT_APP_API_URL;
 
 class HomePage extends React.Component {
 
@@ -49,9 +50,10 @@ class HomePage extends React.Component {
 
 componentDidMount() {
   let videoId = this.props.match.params.id;
+  console.log(API_URL);
 
   axios
-      .get(URL+"videos"+API_KEY)
+      .get(API_URL+"/videos")
       .then(result => {
           let eachVideo = result.data;
           this.setState({
