@@ -48,7 +48,6 @@ class HomePage extends React.Component {
 
 componentDidMount() {
   let videoId = this.props.match.params.id;
-  console.log(API_URL);
 
   axios
       .get(API_URL+"/videos")

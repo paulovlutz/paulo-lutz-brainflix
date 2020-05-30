@@ -2,12 +2,22 @@ const express = require('express');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 const router = express.Router();
-const videosFileName = './videos.json';
 const videosDetails = "./videosDetails.json";
 
 router.get("/", (req, res) => {
-    fs.readFile(videosFileName, "utf8", (_, videoData) => {
-        return res.status(200).json(JSON.parse(videoData));
+    fs.readFile(videosDetails, "utf8", (_, videoData) => {
+        let nextVideoDisplay = JSON.parse(videoData).map(function(singleVideo) {
+            return (
+                {
+                    id: singleVideo.id,
+                    title: singleVideo.title,
+                    channel: singleVideo.channel,
+                    image: singleVideo.image
+                }
+            )
+        });
+
+        return res.status(200).json(nextVideoDisplay);
     });
 });
 
@@ -35,8 +45,6 @@ router.post("/:id/comments", (req, res) => {
                 "likes": 0,
                 "timestamp": Date.now()
             }
-
-        console.log(videoNewComment);
 
         for (let i = 0; i < parsedVideoDetail.length; i++) {
             if (parsedVideoDetail[i].id === videoId) {
