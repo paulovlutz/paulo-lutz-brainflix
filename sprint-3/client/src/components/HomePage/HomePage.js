@@ -3,15 +3,13 @@ import Header from "../Header/Header";
 import HomePageMain from "../HomePageMain/HomePageMain";
 import axios from "axios";
 
-const URL = "https://project-2-api.herokuapp.com/";
-const API_KEY = "?api_key=902a8ac9-fa32-406d-9ce8-6f0aea1265a3";
 const API_URL = process.env.REACT_APP_API_URL;
 
 class HomePage extends React.Component {
 
   setMainVideo = (mainVideoId) => {
     axios
-    .get(API_URL + "/videos/"+ mainVideoId)
+    .get(API_URL + "/videos/" + mainVideoId)
     .then(result => {
         this.setState({
             mainVideo: result.data
@@ -28,11 +26,11 @@ class HomePage extends React.Component {
     event.target.reset();
 
     axios
-        .post(URL+"videos/"+this.state.mainVideo.id+"/comments"+API_KEY,
+        .post(API_URL + "/videos/" + this.state.mainVideo.id + "/comments",
         newComment)
         .then(response => {
             axios 
-              .get(URL + "videos/"+this.state.mainVideo.id + API_KEY)
+              .get(API_URL + "/videos/" + this.state.mainVideo.id)
               .then(response => {
                 this.setState({
                   mainVideo: response.data
