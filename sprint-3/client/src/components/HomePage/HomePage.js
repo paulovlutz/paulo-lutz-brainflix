@@ -11,7 +11,7 @@ class HomePage extends React.Component {
 
   setMainVideo = (mainVideoId) => {
     axios
-    .get(URL + "videos/"+ mainVideoId + API_KEY)
+    .get(API_URL + "/videos/"+ mainVideoId)
     .then(result => {
         this.setState({
             mainVideo: result.data
