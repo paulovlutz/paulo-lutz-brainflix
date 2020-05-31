@@ -3,7 +3,6 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const videosRoutes = require("./videos");
-const uploadRoute = require('./upload');
 
 require('dotenv').config();
 
@@ -16,6 +15,5 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/videos', videosRoutes);
-app.use('/upload', uploadRoute);
 
 app.listen(port, () => console.log(`Server running on ${port}`));

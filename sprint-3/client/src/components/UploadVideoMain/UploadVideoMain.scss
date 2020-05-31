@@ -49,6 +49,10 @@
     &__textarea {
         @include textinput;
         margin-bottom: 20px;
+
+        @include desktop {
+            height: 92px;
+        }
     }
 
     &__buttons {
@@ -85,6 +89,7 @@
 
     &__label {
         font-family: "Avenir Demi Bold";
+        font-size: 0.7rem;
         color: $silver;
 
         @include tablet {

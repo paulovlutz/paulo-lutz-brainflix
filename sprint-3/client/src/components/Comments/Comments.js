@@ -1,5 +1,6 @@
 import React from "react";
 import "./Comments.scss";
+import SingleComment from "../SingleComment/SingleComment";
 import profilePicture from "../../assets/images/profile-picture.jpeg";
 
 class Comments extends React.Component {
@@ -34,20 +35,21 @@ class Comments extends React.Component {
                 <div className="videoDescription__comments">
                     { orderedComments.map(comment => {
                         return (
-                            <div className="videoDescription__comments-card" key={comment.id}>
-                                <div className="videoDescription__comments-profilePicture">
-                                    <img src={profilePicture} alt="Profile"></img>
-                                </div>
-                                <div className="videoDescription__comments-details">
-                                    <div className="videoDescription__comments-nameAndDate">
-                                        <p className="videoDescription__comments-nameAndDate-name">{comment.name}</p>
-                                        <p className="videoDescription__comments-nameAndDate-date">{this.props.buildTimeDescription(comment.timestamp)}</p>
-                                    </div>
-                                    <p className="videoDescription__comments-comment">
-                                        {comment.comment}
-                                    </p>
-                                </div>
-                            </div>
+                            <SingleComment key={comment.id} commentName={comment.name} buildTimeDescription={this.props.buildTimeDescription} timestamp={comment.timestamp} comment={comment.comment} />
+                            // <div className="videoDescription__comments-card" key={comment.id}>
+                            //     <div className="videoDescription__comments-profilePicture">
+                            //         <img src={profilePicture} alt="Profile"></img>
+                            //     </div>
+                            //     <div className="videoDescription__comments-details">
+                            //         <div className="videoDescription__comments-nameAndDate">
+                            //             <p className="videoDescription__comments-nameAndDate-name">{comment.name}</p>
+                            //             <p className="videoDescription__comments-nameAndDate-date">{this.props.buildTimeDescription(comment.timestamp)}</p>
+                            //         </div>
+                            //         <p className="videoDescription__comments-comment">
+                            //             {comment.comment}
+                            //         </p>
+                            //     </div>
+                            // </div>
                         )
                     })}
                 </div>

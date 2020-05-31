@@ -15,6 +15,9 @@ class HomePage extends React.Component {
             mainVideo: result.data
         })
     })
+    .catch (err => {
+      console.log(err);
+    });
   }
 
   handleCommentSubmit = (event) => {
@@ -37,6 +40,9 @@ class HomePage extends React.Component {
                 })
               })
         })
+        .catch (err => {
+          console.log(err);
+        });
   }
 
   state = {
@@ -64,6 +70,9 @@ componentDidMount() {
 
           this.setMainVideo(videoId);
       })
+      .catch (err => {
+        console.log(err);
+      });
 }
 
 componentDidUpdate(prevProps) {

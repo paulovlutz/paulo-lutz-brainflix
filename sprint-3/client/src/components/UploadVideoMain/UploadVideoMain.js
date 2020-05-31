@@ -17,7 +17,10 @@ class UploadVideoMain extends React.Component {
         event.target.reset();
 
         axios
-            .post(API_URL + "/upload", newVideo)
+            .post(API_URL + "/videos", newVideo)
+            .catch (err => {
+                console.log(err);
+            });
     }
 
     render() {
